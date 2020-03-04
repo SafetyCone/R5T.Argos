@@ -12,7 +12,7 @@ namespace R5T.Argos
     {
         public static IConfigurationBuilder AddGmailLessSecureAuthenticationConfiguration(this IConfigurationBuilder configurationBuilder, IServiceProvider configurationServiceProvider)
         {
-            var secretsFilePathProvider = configurationServiceProvider.GetRequiredService<ISecretsFilePathProvider>();
+            var secretsFilePathProvider = configurationServiceProvider.GetRequiredService<ISecretsDirectoryFilePathProvider>();
 
             var secretsFilePath = secretsFilePathProvider.GetSecretsFilePath(FileNames.GmailLessSecureConfigurationJsonFileName);
 
